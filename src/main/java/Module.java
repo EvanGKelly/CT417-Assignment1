@@ -26,9 +26,8 @@ public class Module {
 
     @Override
     public String toString() {
-        return "Module{" +
-                "name='" + name + '\'' +
-                ", ID=" + ID +
-                '}';
+        return " \n Module: " +
+                " name= '" + name + '\'' +
+                ", ID=" + ID;
     }
 }
