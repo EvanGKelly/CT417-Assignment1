@@ -23,4 +23,12 @@ public class Module {
     public void setID(int ID) {
         this.ID = ID;
     }
+
+    @Override
+    public String toString() {
+        return "Module{" +
+                "name='" + name + '\'' +
+                ", ID=" + ID +
+                '}';
+    }
 }

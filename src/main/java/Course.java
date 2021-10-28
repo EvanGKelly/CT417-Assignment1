@@ -11,12 +11,12 @@ public class Course {
     ArrayList<Student> students;
     DateTime startDate, endDate;
 
+    DateTimeFormatter dtf = DateTimeFormat.forPattern("dd/MM/yy");
+
     public Course(String name, ArrayList<Module> modules, ArrayList<Student> students, String startDate, String endDate) {
         this.name = name;
         this.modules = modules;
         this.students = students;
-
-        DateTimeFormatter dtf = DateTimeFormat.forPattern("dd/MM/yyyy");
         this.startDate = dtf.parseDateTime(startDate);
         this.endDate = dtf.parseDateTime(endDate);
     }
@@ -49,16 +49,27 @@ public class Course {
         return startDate;
     }
 
-    public void setStartDate(DateTime startDate) {
-        this.startDate = startDate;
+    public void setStartDate(String startDate) {
+        this.startDate = dtf.parseDateTime(startDate);
     }
 
     public DateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(DateTime endDate) {
-        this.endDate = endDate;
+    public void setEndDate(String endDate) {
+        this.endDate = dtf.parseDateTime(endDate);
     }
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "name='" + name + '\'' +
+                ", modules=" + modules +
+                ", students=" + students +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", dtf=" + dtf +
+                '}';
+    }
 }

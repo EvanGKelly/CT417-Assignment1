@@ -72,5 +72,18 @@ public class Student {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", DOB='" + DOB + '\'' +
+                ", userName='" + userName + '\'' +
+                ", age=" + age +
+                ", ID=" + ID +
+                ", course=" + course +
+                ", modules=" + modules +
+                '}';
+    }
 }
 
