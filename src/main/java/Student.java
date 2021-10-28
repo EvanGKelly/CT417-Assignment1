@@ -77,10 +77,7 @@ public class Student {
     public String toString() {
         return "\n Student: " +
                 "name='" + name + '\'' +
-                ", DOB='" + DOB + '\'' +
                 ", userName='" + userName + '\'' +
-                ", age=" + age +
-                ", ID=" + ID +
                 ", course=" + course +
                 ", modules=" + modules;
     }
