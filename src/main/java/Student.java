@@ -78,7 +78,7 @@ public class Student {
         return "\n Student: " +
                 "name='" + name + '\'' +
                 ", userName='" + userName + '\'' +
-                ", course=" + course +
+                ", course=" + course.getName() +
                 ", modules=" + modules;
     }
 }
