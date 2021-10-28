@@ -1,6 +1,7 @@
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Course {
@@ -10,16 +11,14 @@ public class Course {
     ArrayList<Student> students;
     DateTime startDate, endDate;
 
-    public Course(String name, ArrayList<Module> modules, ArrayList<Student> students, DateTime startDate, DateTime endDate) {
+    public Course(String name, ArrayList<Module> modules, ArrayList<Student> students, String startDate, String endDate) {
         this.name = name;
         this.modules = modules;
         this.students = students;
 
-        DateTimeFormatter.ofPattern("dd/mm/yy");
-        this.startDate = startDate;
-        this.endDate = endDate;
-
-
+        DateTimeFormatter dtf = DateTimeFormat.forPattern("dd/MM/yyyy");
+        this.startDate = dtf.parseDateTime(startDate);
+        this.endDate = dtf.parseDateTime(endDate);
     }
 
     public String getName() {

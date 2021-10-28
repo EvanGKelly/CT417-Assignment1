@@ -1,4 +1,3 @@
-import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,8 +22,8 @@ public class Student_test {
 
     ArrayList<Student> sList = new ArrayList<>();
 
-
-    Course c1 = new Course("CT101", mList, sList, DateTime.parse("10/11/21"), DateTime.parse("10/07/22"));
+    Course c1 = new Course("CT101", mList, sList, "10/11/21", "10/07/22");
+    Course c2 = new Course("CT102", mList2, sList, "10/10/21", "10/06/22");
 
     Student s1 = new Student("Tom Hardy", 19, "10/12/00", 123, "t.hardy", mList, c1);
     Student s2 = new Student("Black Lively ", 18, "10/12/00", 124, "b.lively", mList, c1);
@@ -52,20 +51,15 @@ public class Student_test {
 
     @Test
     public void testStudentName(){
-
         assertEquals(s1.getName(), "Tom Hardy");
-
         s1.setName("Blake Lively");
-
         assertEquals(s1.getName(), "Blake Lively");
     }
 
     @Test
     public void testStudentAge(){
         assertEquals(s1.getAge(), 19);
-
         s1.setAge(21);
-
         assertEquals(s1.getAge(), 21);
         assertNotEquals(s1.getAge(), 22);
     }
@@ -73,27 +67,21 @@ public class Student_test {
     @Test
     public void testStudentDOB(){
         assertEquals(s1.getDOB(), "10/12/00");
-
         s1.setDOB("09/04/01");
-
         assertEquals(s1.getDOB(), "09/04/01");
     }
 
     @Test
     public void testStudentID(){
         assertEquals(s1.getID(), 123);
-
         s1.setID(234);
-
         assertEquals(s1.getID(), 234);
     }
 
     @Test
     public void testStudentUserName(){
         assertEquals(s1.getUserName(), "t.hardy");
-
         s1.setUserName("b.lively");
-
         assertEquals(s1.getUserName(), "b.lively");
     }
 
@@ -112,7 +100,8 @@ public class Student_test {
     @Test
     public void testStudentCourse(){
         assertEquals(s1.getCourse(), c1);
-
+        s1.setCourse(c2);
+        assertEquals(s1.getCourse(), c2);
     }
 
 
